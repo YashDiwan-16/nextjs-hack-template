@@ -1,8 +1,17 @@
+"use client";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import ModeToggle from "./darkmode";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+
+// Navigation items array for reuse
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "about" },
+  { label: "Services", href: "services" },
+  { label: "Contact", href: "contact" },
+];
 
 export default function Navbar() {
   return (
@@ -12,15 +21,16 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-6">
-        <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Home</a>
-        <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">About</a>
-        <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Services</a>
-        <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Contact</a>
+        {navItems.map((item, index) => (
+          <a key={index} href={item.href} className="hover:text-gray-600 dark:hover:text-gray-300">
+            {item.label}
+          </a>
+        ))}
 
         {/* Connect Button & Dark Mode Toggle */}
         <div className="flex items-center space-x-8">
           <ModeToggle />
-          <div className=" md:block w-[180px]">
+          <div className="md:block w-[180px]">
             <ConnectButton />
           </div>
         </div>
@@ -35,10 +45,11 @@ export default function Navbar() {
         </SheetTrigger>
         <SheetContent side="left" className="bg-white text-black dark:bg-black dark:text-white w-64 transition-colors duration-300">
           <div className="flex flex-col space-y-4 p-4">
-            <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Home</a>
-            <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">About</a>
-            <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Services</a>
-            <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Contact</a>
+            {navItems.map((item, index) => (
+              <a key={index} href={item.href} className="hover:text-gray-600 dark:hover:text-gray-300">
+                {item.label}
+              </a>
+            ))}
             
             {/* Dark Mode Toggle & Connect Button (Only Visible on Mobile) */}
             <div className="flex flex-col space-y-2 pt-2">

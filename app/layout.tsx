@@ -32,19 +32,21 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-<Providers cookie={cookie}>
-<ThemeProvider
+        <Providers cookie={cookie}>
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
             <Navbar />
-        {children}
-        <Footer />
-        </ThemeProvider>
+            <div className="flex-grow">
+              {children}
+            </div>
+            <Footer />
+          </ThemeProvider>
         </Providers>
       </body>
     </html>

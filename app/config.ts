@@ -25,13 +25,14 @@ import {
   trustWallet,
   bitgetWallet,
   rainbowWallet, 
+  phantomWallet
 } from '@rainbow-me/rainbowkit/wallets';
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 
 export const config = getDefaultConfig({
   appName: 'Demo',
   projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID ?? '',
-  chains: [mainnet, arbitrum, base, bsc, optimism, polygon],
+  chains: [mainnet, arbitrum, base, bsc, optimism, polygon  ],
   wallets: [
     {
       groupName: 'Popular',
@@ -46,6 +47,7 @@ export const config = getDefaultConfig({
         trustWallet,
         bitgetWallet,
         rainbowWallet,
+        phantomWallet
       ]
     }
   ],
