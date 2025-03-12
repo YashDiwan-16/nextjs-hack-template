@@ -47,16 +47,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const getSocialIconColor = (type: SocialLinkType): string => {
-  switch (type) {
-    case 'linkedin':
-      return "text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300";
-    case 'twitter':
-      return "text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300";
-    case 'github':
-      return "text-gray-800 hover:text-black dark:text-gray-300 dark:hover:text-white";
-    case 'instagram':
-      return "text-pink-500 hover:text-pink-700 dark:text-pink-400 dark:hover:text-pink-300";
-    default:
-      return "";
-  }
+  // Use a consistent blue/indigo color scheme for all social icons
+  // This ensures everything matches with our card design
+  return "text-blue-600 hover:text-indigo-600 dark:text-blue-400 dark:hover:text-indigo-400";
 };
