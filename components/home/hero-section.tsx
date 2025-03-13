@@ -72,8 +72,7 @@ export default function HeroSection() {
               <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-indigo-600 rounded-xl opacity-20 blur-md"></div>
               
               {/* Main content with frosted glass effect */}
-              <div className="relative h-full w-full overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm shadow-inner">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-500/10"></div>
+              <div className="relative h-full w-full overflow-hidden rounded-lg">
                 <Image
                   src="/hero-platform.svg" 
                   alt="Blockchain Platform" 

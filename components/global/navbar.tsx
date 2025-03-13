@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import ModeToggle from "./darkmode";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import WagmiWalletButton from "../wallet/connect-button";
+import Link from "next/link";
 
 // Navigation items array for reuse
 const navItems = [
@@ -22,16 +24,16 @@ export default function Navbar() {
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-6">
         {navItems.map((item, index) => (
-          <a key={index} href={item.href} className="hover:text-gray-600 dark:hover:text-gray-300">
+          <Link key={index} href={item.href} className="hover:text-gray-600 dark:hover:text-gray-300">
             {item.label}
-          </a>
+          </Link>
         ))}
 
         {/* Connect Button & Dark Mode Toggle */}
         <div className="flex items-center space-x-8">
           <ModeToggle />
           <div className="md:block w-[180px]">
-            <ConnectButton />
+            <WagmiWalletButton />
           </div>
         </div>
       </div>

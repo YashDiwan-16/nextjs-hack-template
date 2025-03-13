@@ -55,7 +55,7 @@ export default function AboutAccordion() {
   ];
 
   return (
-    <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-20">
+    <section className="w-full  mx-auto px-4 sm:px-6 lg:px-8 mb-20">
       <div className="relative">
         {/* Decorative Background Elements */}
         <div className="absolute -top-6 -left-8 w-20 h-20 rounded-full opacity-10 bg-current blur-2xl"></div>
@@ -68,13 +68,13 @@ export default function AboutAccordion() {
           
           {/* Shadcn Accordion */}
           <Accordion type="single" collapsible className="w-full">
-            {accordionItems.map((item) => (
+            {accordionItems.map((item, index) => (
               <AccordionItem 
                 key={item.value} 
                 value={item.value}
-                className="mb-4 overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-lg hover:shadow-md transition-all duration-300 data-[state=open]:bg-zinc-50 dark:data-[state=open]:bg-zinc-900/30"
+                className={`overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 data-[state=open]:bg-zinc-50 dark:data-[state=open]:bg-zinc-900/30 ${index !== accordionItems.length - 1 ? 'mb-4' : ''}`}
               >
-                <AccordionTrigger className="px-6 py-4 text-xl font-semibold hover:no-underline group">
+                <AccordionTrigger className="px-6 py-4 text-lg sm:text-xl font-semibold hover:no-underline group cursor-pointer ">
                   <div className="flex items-center space-x-3">
                     {/* Section Icon */}
                     <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800">
@@ -84,7 +84,7 @@ export default function AboutAccordion() {
                     <span>{item.title}</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-5 pt-2 text-gray-600 dark:text-gray-300 text-lg data-[state=open]:animate-fadeIn">
+                <AccordionContent className="px-6 pb-5 pt-2 text-gray-600 dark:text-gray-300 text-base sm:text-lg data-[state=open]:animate-fadeIn">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>

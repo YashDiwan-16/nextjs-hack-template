@@ -34,7 +34,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Providers cookie={cookie}>
+        <Providers>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -43,7 +43,9 @@ export default async function RootLayout({
           >
             <Navbar />
             <div className="flex-grow">
-              {children}
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                {children}
+              </div>
             </div>
             <Footer />
           </ThemeProvider>

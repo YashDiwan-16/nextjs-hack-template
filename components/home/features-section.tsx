@@ -9,7 +9,7 @@ interface FeatureProps {
 
 function FeatureCard({ icon, title, description }: FeatureProps) {
   return (
-    <Card className="border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all duration-300 group overflow-hidden relative transform hover:-translate-y-2 hover:shadow-[0_20px_80px_-10px_rgba(59,130,246,0.3)]">
+    <Card className="border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all duration-300 group overflow-hidden relative transform hover:-translate-y-2  cursor-pointer hover:shadow-[0_20px_80px_-10px_rgba(59,130,246,0.3)]">
       {/* Gradient background that appears on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
       

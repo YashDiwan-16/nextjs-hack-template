@@ -2,7 +2,7 @@ import { HeroSection, FeaturesSection } from "@/components/home";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main >
       <HeroSection />
       <FeaturesSection />
     </main>

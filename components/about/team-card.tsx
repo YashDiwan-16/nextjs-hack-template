@@ -55,9 +55,9 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
         {/* Shadow Card for stacked effect */}
         <div className="absolute -bottom-2 left-1 right-1 top-1 rounded-xl bg-black/10 dark:bg-white/5 blur-sm"></div>
         
-        <Card className="relative rounded-xl overflow-hidden border-none shadow-lg backdrop-blur-sm bg-white/90 dark:bg-zinc-900/90">
+        <Card className="relative rounded-lg cursor-pointer overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md backdrop-blur-sm bg-white/90 dark:bg-zinc-900/90">
           {/* Card Border with Gradient */}
-          <div className="absolute inset-0 rounded-xl p-[1px] overflow-hidden">
+          <div className="absolute inset-0 rounded-lg p-[1px] overflow-hidden">
             <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-40 dark:opacity-60`}></div>
           </div>
           
@@ -68,10 +68,10 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
           
           {/* Content Container */}
           <div className="relative z-20">
-            <CardHeader className="relative pt-5 pb-0 px-5">
+            <CardHeader className="relative pt-5 pb-0 px-6">
               <div className="flex flex-row items-start justify-between">
                 <div className="flex flex-col">
-                  <CardTitle className="text-xl font-bold tracking-tight">{name}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl font-bold tracking-tight">{name}</CardTitle>
                   <Badge className={`w-fit mt-1 text-xs font-medium text-white bg-gradient-to-r ${gradient} border-none`}>
                     {role}
                   </Badge>
@@ -90,7 +90,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
               </div>
             </CardHeader>
             
-            <CardContent className="px-5 py-3">
+            <CardContent className="px-6 py-3">
               {/* Bio with custom quotation mark */}
               <div className="relative">
                 <div className="absolute -top-1 -left-1 text-4xl leading-none opacity-20 font-serif">"</div>
@@ -101,7 +101,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
               </div>
             </CardContent>
             
-            <CardFooter className="px-5 pb-4 pt-1 flex justify-between items-center">
+            <CardFooter className="px-6 pb-4 pt-1 flex justify-between items-center">
               {/* Dynamic shape divider */}
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent"></div>
               
@@ -138,8 +138,8 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
 
 export default function TeamSection() {
   return (
-    <section className="w-full max-w-6xl">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+    <section className="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
         Meet Our Team
       </h2>
       <p className="text-center text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto mb-10">

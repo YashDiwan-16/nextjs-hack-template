@@ -29,9 +29,12 @@ import {
 } from '@rainbow-me/rainbowkit/wallets';
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 
+// Get the project ID from environment variables or use a default value
+const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'default_project_id';
+
 export const config = getDefaultConfig({
   appName: 'Demo',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID ?? '',
+  projectId,
   chains: [mainnet, arbitrum, base, bsc, optimism, polygon  ],
   wallets: [
     {
