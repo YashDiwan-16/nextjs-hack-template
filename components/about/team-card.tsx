@@ -97,7 +97,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
                 <CardDescription className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 pt-2 pl-3 line-clamp-3">
                   {bio}
                 </CardDescription>
-                <div className="absolute -bottom-1 -right-1 text-4xl leading-none opacity-20 font-serif rotate-180">"</div>
+                <div className="absolute -bottom-1 -right-1 text-4xl leading-none opacity-20 font-serif rotate-180">  </div>
               </div>
             </CardContent>
             

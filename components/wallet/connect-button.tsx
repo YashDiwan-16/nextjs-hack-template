@@ -10,7 +10,6 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
-import { WalletOptions } from "@/components/ui/wallet-options";
 
 const WagmiWalletButton = () => {
   const { isConnected, address } = useAccount();

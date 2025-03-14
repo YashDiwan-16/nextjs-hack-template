@@ -8,7 +8,7 @@ export function ContactText({ className, ...props }: ContactTextProps) {
     <div 
       className={cn(
         "p-4 sm:p-6 md:absolute md:top-8 md:left-8", 
-        className
+       
       )} 
       {...props}
     >
@@ -17,7 +17,7 @@ export function ContactText({ className, ...props }: ContactTextProps) {
       </h1>
       <div className="mt-2 h-1 w-16 sm:w-20 bg-primary rounded-full" />
       <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400 max-w-md">
-        Have a project in mind? I&aposd love to hear from you.
+        Have a project in mind? I&apos;d love to hear from you.
       </p>
     </div>
   );
