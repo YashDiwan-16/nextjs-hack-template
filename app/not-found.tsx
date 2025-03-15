@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Home, Search, AlertCircle, MoveLeft } from "lucide-react";
+import {  Home, Search, AlertCircle, MoveLeft } from "lucide-react";
 
 export default function NotFound() {
   const [mounted, setMounted] = useState(false);
@@ -66,7 +66,7 @@ export default function NotFound() {
             </h2>
             
             <p className="text-md sm:text-lg text-zinc-600 dark:text-zinc-300 mb-8 max-w-md mx-auto">
-              The page you're looking for doesn't exist or has been moved to another location.
+              The page you are looking for doesn&apos;t exist or has been moved to another location.
             </p>
           </div>
           

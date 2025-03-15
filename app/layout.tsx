@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/global/navbar";
 import Footer from "@/components/global/footer";
 import { Providers } from './providers'
-import { headers } from 'next/headers' 
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -28,8 +27,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers()
-  const cookie = headersList.get('cookie')
+
   return (
     <html lang="en">
       <body

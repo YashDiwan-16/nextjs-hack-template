@@ -126,7 +126,7 @@ const WalletOption = ({
         setChecking(true);
         const provider = await connector.getProvider();
         setReady(!!provider);
-      } catch (error) {
+      } catch {
         setReady(false);
       } finally {
         setChecking(false);

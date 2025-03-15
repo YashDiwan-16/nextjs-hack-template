@@ -84,7 +84,7 @@ export default function FeaturesSection() {
           </h2>
           <p className="text-lg text-zinc-700 dark:text-zinc-300">
             Our platform provides everything you need to build, deploy, and scale your next blockchain project.
-            From smart contract development to user-friendly interfaces, we've got you covered.
+            From smart contract development to user-friendly interfaces, we&apos;ve got you covered.
           </p>
         </div>
         

@@ -93,7 +93,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
             <CardContent className="px-6 py-3">
               {/* Bio with custom quotation mark */}
               <div className="relative">
-                <div className="absolute -top-1 -left-1 text-4xl leading-none opacity-20 font-serif">"</div>
+                <div className="absolute -top-1 -left-1 text-4xl leading-none opacity-20 font-serif">&quot;</div>
                 <CardDescription className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 pt-2 pl-3 line-clamp-3">
                   {bio}
                 </CardDescription>
@@ -103,7 +103,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
             
             <CardFooter className="px-6 pb-4 pt-1 flex justify-between items-center">
               {/* Dynamic shape divider */}
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent"></div>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent">&quot;</div>
               
               {/* Social Links */}
               <div className="flex gap-1 pl-3">

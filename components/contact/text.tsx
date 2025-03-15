@@ -1,15 +1,13 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-interface ContactTextProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function ContactText({ className, ...props }: ContactTextProps) {
+export function ContactText({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div 
+    <div
       className={cn(
         "p-4 sm:p-6 md:absolute md:top-8 md:left-8", 
-       
-      )} 
+        className // ✅ Use className to avoid ESLint error
+      )}
       {...props}
     >
       <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold tracking-tight text-foreground">
