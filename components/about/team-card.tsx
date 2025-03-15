@@ -97,13 +97,13 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
                 <CardDescription className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 pt-2 pl-3 line-clamp-3">
                   {bio}
                 </CardDescription>
-                <div className="absolute -bottom-1 -right-1 text-4xl leading-none opacity-20 font-serif rotate-180">  </div>
+                <div className="absolute -bottom-1 -right-1 text-4xl leading-none opacity-20 font-serif rotate-180">&quot;</div>
               </div>
             </CardContent>
             
             <CardFooter className="px-6 pb-4 pt-1 flex justify-between items-center">
               {/* Dynamic shape divider */}
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent">&quot;</div>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent"></div>
               
               {/* Social Links */}
               <div className="flex gap-1 pl-3">
