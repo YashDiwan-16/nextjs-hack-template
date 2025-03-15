@@ -51,21 +51,44 @@ export default function ContactForm() {
     },
   });
 
-  async function onSubmit(data: ContactFormValues) {
+  
+  const onSubmit=async (data: ContactFormValues)=> {
     setIsSubmitting(true);
     
     try {
-      // Replace with actual API call to submit form
-      console.log("Form submitted:", data);
+      toast.info("Sending your message...");
       
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Send data to the contact API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const responseData = await response.json();
       
-      toast.success("Message sent successfully!");
+      if (!response.ok) {
+        throw new Error(responseData.error || responseData.message || 'Failed to send message');
+      }
+      
+      toast.success("Message sent successfully! We'll get back to you soon.");
       form.reset();
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
-      console.error(error);
+      console.error('Contact form error:', error);
+      
+      // Display a more detailed error message
+      if (error instanceof Error) {
+        // Check for specific error messages related to email configuration
+        if (error.message.includes('configuration') || error.message.includes('SMTP')) {
+          toast.error("Server email configuration error. Please try again later or contact us directly.");
+        } else {
+          toast.error(`Error: ${error.message}`);
+        }
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
     } finally {
       setIsSubmitting(false);
     }

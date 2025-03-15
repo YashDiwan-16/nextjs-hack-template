@@ -20,6 +20,43 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Contact Form Email Configuration
+
+This project includes a contact form that sends emails using Nodemailer. To make it work:
+
+1. Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+2. Edit `.env.local` and provide your email credentials:
+```
+EMAIL_USER=your.email@gmail.com
+EMAIL_PASS=your-password-or-app-password
+```
+
+### Using Gmail
+
+If you're using Gmail:
+
+- For accounts without 2-factor authentication: Enable "Less secure app access" in your Google account settings.
+- For accounts with 2-factor authentication: Generate an App Password at [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords) and use it as the `EMAIL_PASS`.
+
+### Using Other Email Providers
+
+For non-Gmail providers, specify the host and port in your `.env.local`:
+
+```
+EMAIL_HOST=your-smtp-server.com
+EMAIL_PORT=587
+EMAIL_USER=your-email
+EMAIL_PASS=your-password
+```
+
+Common providers:
+- Outlook/Hotmail: `smtp.office365.com` (port 587)
+- Yahoo Mail: `smtp.mail.yahoo.com` (port 587)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
