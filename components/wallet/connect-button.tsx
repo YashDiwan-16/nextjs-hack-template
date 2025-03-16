@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 
-const WagmiWalletButton = () => {
+export const WagmiWalletButton = () => {
   const { isConnected, address } = useAccount();
   const { disconnect } = useDisconnect();
   const [mounted, setMounted] = useState(false);
@@ -33,6 +33,15 @@ const WagmiWalletButton = () => {
         `Copied ${formatAddress(address)} to clipboard`,
         { duration: 2000 }
       );
+    }
+  };
+
+  const handleConnect = () => {
+    if (openConnectModal) {
+      // Small timeout to ensure any state updates complete first
+      setTimeout(() => {
+        openConnectModal();
+      }, 50);
     }
   };
 
@@ -60,10 +69,11 @@ const WagmiWalletButton = () => {
   }
 
   // Choose between custom WalletOptions or RainbowKit modal
-  // If you prefer to use RainbowKit's modal instead:
   if (openConnectModal) {
-    return <Button variant="default" onClick={openConnectModal}>Connect</Button>;
+    return <Button variant="default" onClick={handleConnect}>Connect</Button>;
   }
+  
+  return <Button variant="default">Connect</Button>;
 };
 
 export default WagmiWalletButton;
